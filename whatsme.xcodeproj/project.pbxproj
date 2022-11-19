@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75931DEB5712DE9E4F6B3D2D /* Pods_whatsme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C1DA4264998538698C84C9 /* Pods_whatsme.framework */; };
 		D368057B292909ED00FD5009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368057A292909ED00FD5009 /* AppDelegate.swift */; };
-		D368057D292909ED00FD5009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368057C292909ED00FD5009 /* SceneDelegate.swift */; };
 		D368057F292909ED00FD5009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368057E292909ED00FD5009 /* ViewController.swift */; };
 		D3680582292909ED00FD5009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3680580292909ED00FD5009 /* Main.storyboard */; };
 		D3680584292909EE00FD5009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3680583292909EE00FD5009 /* Assets.xcassets */; };
@@ -16,14 +16,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01C1DA4264998538698C84C9 /* Pods_whatsme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whatsme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B6F24550641A74C3C7FFE3 /* Pods-whatsme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whatsme.release.xcconfig"; path = "Target Support Files/Pods-whatsme/Pods-whatsme.release.xcconfig"; sourceTree = "<group>"; };
 		D3680577292909ED00FD5009 /* whatsme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatsme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D368057A292909ED00FD5009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D368057C292909ED00FD5009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D368057E292909ED00FD5009 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3680581292909ED00FD5009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3680583292909EE00FD5009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3680586292909EE00FD5009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3680588292909EE00FD5009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7B2049C8F1185E166BBF17C /* Pods-whatsme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whatsme.debug.xcconfig"; path = "Target Support Files/Pods-whatsme/Pods-whatsme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75931DEB5712DE9E4F6B3D2D /* Pods_whatsme.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D9482568D523F7AAE971E48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01C1DA4264998538698C84C9 /* Pods_whatsme.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		437FA977153F1D9D8ABDD55A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7B2049C8F1185E166BBF17C /* Pods-whatsme.debug.xcconfig */,
+				22B6F24550641A74C3C7FFE3 /* Pods-whatsme.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D368056E292909ED00FD5009 = {
 			isa = PBXGroup;
 			children = (
 				D3680579292909ED00FD5009 /* whatsme */,
 				D3680578292909ED00FD5009 /* Products */,
+				437FA977153F1D9D8ABDD55A /* Pods */,
+				3D9482568D523F7AAE971E48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +78,46 @@
 		D3680579292909ED00FD5009 /* whatsme */ = {
 			isa = PBXGroup;
 			children = (
-				D368057A292909ED00FD5009 /* AppDelegate.swift */,
-				D368057C292909ED00FD5009 /* SceneDelegate.swift */,
-				D368057E292909ED00FD5009 /* ViewController.swift */,
-				D3680580292909ED00FD5009 /* Main.storyboard */,
-				D3680583292909EE00FD5009 /* Assets.xcassets */,
-				D3680585292909EE00FD5009 /* LaunchScreen.storyboard */,
-				D3680588292909EE00FD5009 /* Info.plist */,
+				D368058E29290F1D00FD5009 /* AppDelegate */,
+				D368059029290F3100FD5009 /* launchscreen */,
+				D368058F29290F2800FD5009 /* Main screen */,
+				D368059129290F3F00FD5009 /* Assists */,
 			);
 			path = whatsme;
+			sourceTree = "<group>";
+		};
+		D368058E29290F1D00FD5009 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D368057A292909ED00FD5009 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D368058F29290F2800FD5009 /* Main screen */ = {
+			isa = PBXGroup;
+			children = (
+				D368057E292909ED00FD5009 /* ViewController.swift */,
+				D3680580292909ED00FD5009 /* Main.storyboard */,
+			);
+			path = "Main screen";
+			sourceTree = "<group>";
+		};
+		D368059029290F3100FD5009 /* launchscreen */ = {
+			isa = PBXGroup;
+			children = (
+				D3680585292909EE00FD5009 /* LaunchScreen.storyboard */,
+			);
+			path = launchscreen;
+			sourceTree = "<group>";
+		};
+		D368059129290F3F00FD5009 /* Assists */ = {
+			isa = PBXGroup;
+			children = (
+				D3680583292909EE00FD5009 /* Assets.xcassets */,
+				D3680588292909EE00FD5009 /* Info.plist */,
+			);
+			path = Assists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D368058B292909EE00FD5009 /* Build configuration list for PBXNativeTarget "whatsme" */;
 			buildPhases = (
+				714C8D047AE1CEFC660BF2B3 /* [CP] Check Pods Manifest.lock */,
 				D3680573292909ED00FD5009 /* Sources */,
 				D3680574292909ED00FD5009 /* Frameworks */,
 				D3680575292909ED00FD5009 /* Resources */,
+				4F423CB05E72498BE1081C8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +188,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F423CB05E72498BE1081C8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-whatsme/Pods-whatsme-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-whatsme/Pods-whatsme-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-whatsme/Pods-whatsme-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		714C8D047AE1CEFC660BF2B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-whatsme-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3680573292909ED00FD5009 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +237,6 @@
 			files = (
 				D368057F292909ED00FD5009 /* ViewController.swift in Sources */,
 				D368057B292909ED00FD5009 /* AppDelegate.swift in Sources */,
-				D368057D292909ED00FD5009 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +378,7 @@
 		};
 		D368058C292909EE00FD5009 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7B2049C8F1185E166BBF17C /* Pods-whatsme.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -289,12 +386,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4YZSY77G5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = whatsme/Info.plist;
+				INFOPLIST_FILE = whatsme/Assists/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "what'sme";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,12 +403,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D368058D292909EE00FD5009 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22B6F24550641A74C3C7FFE3 /* Pods-whatsme.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,12 +417,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4YZSY77G5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = whatsme/Info.plist;
+				INFOPLIST_FILE = whatsme/Assists/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "what'sme";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +434,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,50 @@
+PODS:
+  - FlagKits (1.0.1):
+    - libPhoneNumber-iOS
+    - Reusable
+  - IQKeyboardManagerSwift (6.5.9)
+  - libPhoneNumber-iOS (0.9.15)
+  - RappleProgressHUD (4.1)
+  - Reusable (4.1.2):
+    - Reusable/Storyboard (= 4.1.2)
+    - Reusable/View (= 4.1.2)
+  - Reusable/Storyboard (4.1.2)
+  - Reusable/View (4.1.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+
+DEPENDENCIES:
+  - FlagKits
+  - IQKeyboardManagerSwift
+  - RappleProgressHUD
+  - RxCocoa
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - FlagKits
+    - IQKeyboardManagerSwift
+    - libPhoneNumber-iOS
+    - RappleProgressHUD
+    - Reusable
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  FlagKits: d827fabdcd1c8ababf6e698bad9001204d4184d7
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  libPhoneNumber-iOS: 0a32a9525cf8744fe02c5206eb30d571e38f7d75
+  RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
+  Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+
+PODFILE CHECKSUM: 4e0bfc9e7ee7c9ae6355e9b9a8d1d59f16290335
+
+COCOAPODS: 1.11.3
