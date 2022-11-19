@@ -23,10 +23,14 @@ open class FKFlagHolderView: UIView, NibOwnerLoadable {
     
     open weak var delegate: FKFlagHolderDelegate?
     fileprivate var hiddenTfChooseCountry: UITextField?
-    open var phoneCode: String? = "+1" // US default
+    open var phoneCode: String? = "+20" // Egy default
     
     open var phone: String? {
         return tfPhone.text
+    }
+    
+    open var textFieldPhone: UITextField {
+        return tfPhone
     }
     
     open var fullPhone: String? {
@@ -67,9 +71,11 @@ open class FKFlagHolderView: UIView, NibOwnerLoadable {
         backgroundColor = .clear
         tfPhone.delegate = self
         tfPhone.placeholder = "Phone number"
+        tfPhone.clearButtonMode = .whileEditing
         tfPhone.keyboardType = .phonePad
-        phoneCode = "+1"
-        setFlag(with: "us")
+        phoneCode = "+20"
+        lblPhoneCode.text = phoneCode
+        setFlag(with: "eg")
     }
     
     fileprivate func setFlag(with code: String) {
@@ -85,7 +91,7 @@ open class FKFlagHolderView: UIView, NibOwnerLoadable {
         let countryPicker = FKFKCountryPicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 260))
         countryPicker.backgroundColor = backgroundPickerColor
         countryPicker.countryPhoneCodeDelegate = self
-        countryPicker.setCountry(code: "us")
+        countryPicker.setCountry(code: "eg")
         
         // Trick:
         hiddenTfChooseCountry = UITextField()
