@@ -258,6 +258,7 @@
                         <outlet property="number7Button" destination="e4l-eB-DE7" id="nB0-Ml-D1Y"/>
                         <outlet property="number8Button" destination="doF-kq-Y42" id="HiX-Ch-bor"/>
                         <outlet property="number9Button" destination="CjW-NU-pDG" id="rq8-Ld-d4v"/>
+                        <outlet property="openChatButton" destination="gLZ-i3-5pW" id="8TL-iw-A5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

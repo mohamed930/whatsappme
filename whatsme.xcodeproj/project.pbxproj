@@ -14,6 +14,8 @@
 		D3680584292909EE00FD5009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3680583292909EE00FD5009 /* Assets.xcassets */; };
 		D3680587292909EE00FD5009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3680585292909EE00FD5009 /* LaunchScreen.storyboard */; };
 		D38E08B4292946460002DB74 /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E08B3292946460002DB74 /* color.swift */; };
+		D3AA7D2D292C053C00DCF8DD /* NumberPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA7D2C292C053C00DCF8DD /* NumberPhoneViewModel.swift */; };
+		D3AA7D30292C059D00DCF8DD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA7D2F292C059D00DCF8DD /* UIView.swift */; };
 		D3B687522929878D00DDB8ED /* FiraSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B6873F2929878D00DDB8ED /* FiraSans-Thin.ttf */; };
 		D3B687532929878D00DDB8ED /* FiraSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B687402929878D00DDB8ED /* FiraSans-ExtraLightItalic.ttf */; };
 		D3B687542929878D00DDB8ED /* FiraSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B687412929878D00DDB8ED /* FiraSans-LightItalic.ttf */; };
@@ -46,6 +48,8 @@
 		D3680586292909EE00FD5009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3680588292909EE00FD5009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D38E08B3292946460002DB74 /* color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
+		D3AA7D2C292C053C00DCF8DD /* NumberPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPhoneViewModel.swift; sourceTree = "<group>"; };
+		D3AA7D2F292C059D00DCF8DD /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D3B6873F2929878D00DDB8ED /* FiraSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Thin.ttf"; sourceTree = "<group>"; };
 		D3B687402929878D00DDB8ED /* FiraSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		D3B687412929878D00DDB8ED /* FiraSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -120,7 +124,7 @@
 			children = (
 				D368058E29290F1D00FD5009 /* AppDelegate */,
 				D368059029290F3100FD5009 /* launchscreen */,
-				D368058F29290F2800FD5009 /* Main screen */,
+				D3AA7D2A292C050700DCF8DD /* Main */,
 				D38E08B2292946170002DB74 /* EXtensions + UICustoms */,
 				D368059129290F3F00FD5009 /* Assists */,
 			);
@@ -135,13 +139,12 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		D368058F29290F2800FD5009 /* Main screen */ = {
+		D368058F29290F2800FD5009 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				D368057E292909ED00FD5009 /* NumberViewController.swift */,
 				D3680580292909ED00FD5009 /* Main.storyboard */,
 			);
-			path = "Main screen";
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		D368059029290F3100FD5009 /* launchscreen */ = {
@@ -166,8 +169,35 @@
 			isa = PBXGroup;
 			children = (
 				D38E08B3292946460002DB74 /* color.swift */,
+				D3AA7D2F292C059D00DCF8DD /* UIView.swift */,
 			);
 			path = "EXtensions + UICustoms";
+			sourceTree = "<group>";
+		};
+		D3AA7D2A292C050700DCF8DD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA7D2B292C052C00DCF8DD /* Number ViewModel */,
+				D3AA7D2E292C054000DCF8DD /* Number Controller */,
+				D368058F29290F2800FD5009 /* Screen */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D3AA7D2B292C052C00DCF8DD /* Number ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA7D2C292C053C00DCF8DD /* NumberPhoneViewModel.swift */,
+			);
+			path = "Number ViewModel";
+			sourceTree = "<group>";
+		};
+		D3AA7D2E292C054000DCF8DD /* Number Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D368057E292909ED00FD5009 /* NumberViewController.swift */,
+			);
+			path = "Number Controller";
 			sourceTree = "<group>";
 		};
 		D3B6873E2929878D00DDB8ED /* Fira_Sans */ = {
@@ -330,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AA7D30292C059D00DCF8DD /* UIView.swift in Sources */,
+				D3AA7D2D292C053C00DCF8DD /* NumberPhoneViewModel.swift in Sources */,
 				D38E08B4292946460002DB74 /* color.swift in Sources */,
 				D368057F292909ED00FD5009 /* NumberViewController.swift in Sources */,
 				D368057B292909ED00FD5009 /* AppDelegate.swift in Sources */,

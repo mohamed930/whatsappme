@@ -33,6 +33,10 @@ open class FKFlagHolderView: UIView, NibOwnerLoadable {
         return tfPhone
     }
     
+    open var codeLabel: UILabel {
+        return lblPhoneCode
+    }
+    
     open var fullPhone: String? {
         if let phoneCode = phoneCode, let text = tfPhone.text {
             return "\(phoneCode)\(text)"

@@ -26,8 +26,12 @@ class NumberViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var number0Button: UIButton!
     
+    @IBOutlet weak var openChatButton: UIButton!
+    
     
     var buttons = Array<UIButton>()
+    let colorHexCode = "BFBBC1"
+    let numberphoneviewmodel = NumberPhoneViewModel()
     
     let disposebag = DisposeBag()
 
@@ -36,32 +40,30 @@ class NumberViewController: UIViewController {
         
         initialiseFlagColor()
         SubscribeViewSelected()
+        BindToPhoneNumber()
         
         buttons = [number1Button,number2Button,number3Button,number4Button,number5Button,number6Button,number7Button,number8Button,number9Button,clearButton,number0Button]
         SetButtonCircle()
         
         holder.textFieldPhone.becomeFirstResponder()
         
+        SubscribeToOpenChatButtonAction()
+        
     }
     
     func initialiseFlagColor() {
         holder.backgroundPickerColor = .white
-        holder.layer.borderColor = UIColor().hexStringToUIColor(hex: "#BFBBC1").cgColor
-        holder.layer.borderWidth = 1
-        holder.layer.cornerRadius = 5
+        holder.SetViewUpdateUI(Color: colorHexCode, borderWidth: 1, cornerRadious: 5)
     }
     
     func SubscribeViewSelected() {
-        holder.textFieldPhone.rx.controlEvent(UIControl.Event.editingDidBegin).subscribe(onNext: { _ in
-            self.holder.layer.borderColor = UIColor.purple.cgColor
-            self.holder.layer.borderWidth = 1.5
+        holder.textFieldPhone.rx.controlEvent(UIControl.Event.editingDidBegin).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.holder.SetViewUpdateUI(Color: "#AA4CDC", borderWidth: 1.5, cornerRadious: 5)
+            
             self.holder.textFieldPhone.inputView = UIView()
             self.holder.textFieldPhone.inputAccessoryView = UIView()
-        }).disposed(by: disposebag)
-        
-        holder.textFieldPhone.rx.controlEvent([UIControl.Event.editingDidEndOnExit,UIControl.Event.editingDidEnd]).subscribe(onNext: { _ in
-            self.holder.layer.borderColor = UIColor().hexStringToUIColor(hex: "#BFBBC1").cgColor
-            self.holder.layer.borderWidth = 1
         }).disposed(by: disposebag)
     }
     
@@ -79,7 +81,6 @@ class NumberViewController: UIViewController {
             button.layer.shadowOpacity = 1
             button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
             button.layer.masksToBounds = false
-            // print(self.view.frame.height)
         }
     }
     
@@ -113,7 +114,6 @@ class NumberViewController: UIViewController {
             holder.textFieldPhone.text! += "9"
             break
         case 10:
-//            let str = holder.textFieldPhone.text
             guard let text = holder.textFieldPhone.text else { return }
             holder.textFieldPhone.text = String(text.dropLast())
             break
@@ -123,6 +123,20 @@ class NumberViewController: UIViewController {
         default:
             print("Error")
         }
+        
+        numberphoneviewmodel.phoneNumberBehaviour.accept(holder.textFieldPhone.text!)
+    }
+    
+    func BindToPhoneNumber() {
+        holder.textFieldPhone.rx.text.orEmpty.bind(to: numberphoneviewmodel.phoneNumberBehaviour).disposed(by: disposebag)
+    }
+    
+    func SubscribeToOpenChatButtonAction() {
+        openChatButton.rx.tap.throttle(.milliseconds(500), scheduler: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.numberphoneviewmodel.openWhatsAppChatOperation(code: self.holder.phoneCode ?? "+2")
+        }).disposed(by: disposebag)
     }
     
 

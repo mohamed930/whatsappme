@@ -4,5 +4,9 @@
 <dict>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+    <key>LSApplicationQueriesSchemes</key>
+     <array>
+        <string>whatsapp</string>
+     </array>
 </dict>
 </plist>
