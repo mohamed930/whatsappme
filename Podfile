@@ -10,7 +10,7 @@ target 'whatsme' do
   pod 'RxSwift'
   pod 'RxCocoa'
   
-  pod 'RappleProgressHUD'
+  pod 'ProgressHUD'
   
   pod 'FlagKits'
   

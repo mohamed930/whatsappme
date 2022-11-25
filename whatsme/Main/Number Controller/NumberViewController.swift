@@ -12,8 +12,8 @@ import RxCocoa
 
 class NumberViewController: UIViewController {
     
+    // MARK: TODO: This section for IBOutlets here:-
     @IBOutlet weak var holder: FKFlagHolderView!
-    
     @IBOutlet weak var number1Button: UIButton!
     @IBOutlet weak var number2Button: UIButton!
     @IBOutlet weak var number3Button: UIButton!
@@ -29,10 +29,10 @@ class NumberViewController: UIViewController {
     @IBOutlet weak var openChatButton: UIButton!
     
     
+    // MARK: TODO: This Section for Adding new variables her:-
     var buttons = Array<UIButton>()
     let colorHexCode = "BFBBC1"
     let numberphoneviewmodel = NumberPhoneViewModel()
-    
     let disposebag = DisposeBag()
 
     override func viewDidLoad() {
@@ -40,7 +40,6 @@ class NumberViewController: UIViewController {
         
         initialiseFlagColor()
         SubscribeViewSelected()
-        BindToPhoneNumber()
         
         buttons = [number1Button,number2Button,number3Button,number4Button,number5Button,number6Button,number7Button,number8Button,number9Button,clearButton,number0Button]
         SetButtonCircle()
@@ -51,11 +50,14 @@ class NumberViewController: UIViewController {
         
     }
     
+    // MARK: TODO: This Method For Initialise UI for Country Flag Tag.
     func initialiseFlagColor() {
         holder.backgroundPickerColor = .white
         holder.SetViewUpdateUI(Color: colorHexCode, borderWidth: 1, cornerRadious: 5)
     }
+    // -------------------------------------------
     
+    // MARK: TODO: This Method For handle if user start with edit if he start change (borderColor and hide textPad).
     func SubscribeViewSelected() {
         holder.textFieldPhone.rx.controlEvent(UIControl.Event.editingDidBegin).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
@@ -66,7 +68,9 @@ class NumberViewController: UIViewController {
             self.holder.textFieldPhone.inputAccessoryView = UIView()
         }).disposed(by: disposebag)
     }
+    // -------------------------------------------
     
+    // MARK: TODO: This Method For Make Numbers Button Radious Circle and add to it simple Shadow.
     func SetButtonCircle() {
         buttons.forEach { button in
             if self.view.frame.height > 667 {
@@ -83,7 +87,9 @@ class NumberViewController: UIViewController {
             button.layer.masksToBounds = false
         }
     }
+    // -------------------------------------------
     
+    // MARK: TODO: This Action Method For Numbers Button to add value to textField.
     @IBAction func ButtonAction(_ sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -124,17 +130,17 @@ class NumberViewController: UIViewController {
             print("Error")
         }
         
+        // send value to ViewModel.
         numberphoneviewmodel.phoneNumberBehaviour.accept(holder.textFieldPhone.text!)
     }
+    // -------------------------------------------
     
-    func BindToPhoneNumber() {
-        holder.textFieldPhone.rx.text.orEmpty.bind(to: numberphoneviewmodel.phoneNumberBehaviour).disposed(by: disposebag)
-    }
-    
+    // MARK: TODO: This Action Method For Open Chat Button.
     func SubscribeToOpenChatButtonAction() {
         openChatButton.rx.tap.throttle(.milliseconds(500), scheduler: MainScheduler.instance).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
             
+            // Call ViewModel and open What'sapp with the number and code.
             self.numberphoneviewmodel.openWhatsAppChatOperation(code: self.holder.phoneCode ?? "+2")
         }).disposed(by: disposebag)
     }
